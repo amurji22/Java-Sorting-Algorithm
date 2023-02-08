@@ -117,7 +117,4 @@ public class SortingHubController implements Initializable {
         Combo_Box.setValue("Merge Sort");
         random_array();
     }
-
-
-
 }

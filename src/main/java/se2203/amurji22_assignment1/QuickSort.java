@@ -1,12 +1,9 @@
 package se2203.amurji22_assignment1;
 
 public class QuickSort implements SortingStrategy{
-
-
     @Override
     public void run() {
     }
-    private int[] list;
     private SortingHubController controller;
     public QuickSort(SortingHubController controller) {
         this.controller = controller;
@@ -20,11 +17,7 @@ public class QuickSort implements SortingStrategy{
             sort(a, start, p - 1);
 
             sort(a, p + 1, end);
-
-
         }
-
-
     }
     int partition (int a[], int start, int end)
     {
@@ -48,23 +41,10 @@ public class QuickSort implements SortingStrategy{
                     throw new RuntimeException(e);
                 }
             }
-            try {
-                Thread.sleep(15);
-                controller.updateGraph(a);
-
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-
         }
-
         int t = a[i+1];
         a[i+1] = a[end];
         a[end] = t;
-
         return (i + 1);
     }
-
-
-
 }

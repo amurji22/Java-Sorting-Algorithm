@@ -2,26 +2,15 @@ package se2203.amurji22_assignment1;
 
 public class MergeSort implements SortingStrategy{
 
-
     @Override
     public void run() {
     }
-    private int[] list;
     private SortingHubController controller;
-    //private int l = 0;
-    //private int r = controller.getSize()-1;
-
-    private int l;
-    private int r;
 
     public MergeSort(SortingHubController controller){
         this.controller = controller;
 
     }
-
-
-
-
 
     @Override
     public void sort(int arr[], int l, int r)
@@ -39,14 +28,11 @@ public class MergeSort implements SortingStrategy{
     void merge(int arr[], int start, int mid,
                int end)
     {
-
         int start2 = mid + 1;
-
         // If the direct merge is already sorted
         if (arr[mid] <= arr[start2]) {
             return;
         }
-
         // Two pointers to maintain start
         // of both arrays to merge
         while (start <= mid && start2 <= end) {
@@ -57,8 +43,6 @@ public class MergeSort implements SortingStrategy{
             else {
                 int value = arr[start2];
                 int index = start2;
-
-
                 // Shift all the elements between element 1
                 // element 2, right by 1.
                 while (index != start) {
@@ -67,13 +51,11 @@ public class MergeSort implements SortingStrategy{
                     try {
                         Thread.sleep(30);
                         controller.updateGraph(arr);
-
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
                 }
                 arr[start] = value;
-
                 // Update all the pointers
                 start++;
                 mid++;
